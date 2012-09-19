@@ -4,6 +4,10 @@ class AppsController < ApplicationController
     Rails.logger.debug "Apps -> index"
   end
 
+  def show
+    Rails.logger.debug "Apps -> show"
+  end
+
 =begin
   def show
     @gameSlug = params[:id]
