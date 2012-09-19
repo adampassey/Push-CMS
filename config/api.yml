@@ -1,5 +1,5 @@
 defaults: &defaults
-  v1_pushapi_url: "http://localhost:8080/pushapi/"
+  v1_pushapi_url: "http://localhost:8124/pushapi/"
 
 test:
   <<: *defaults

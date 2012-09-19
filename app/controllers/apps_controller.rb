@@ -1,7 +1,14 @@
 class AppsController < ApplicationController
 
   def index 
-    Rails.logger.debug "Apps -> index"
+    @apps = App.get
+    Rails.logger.debug @apps.to_yaml
+
+    # for testing purposes
+    #newApp = App.new
+    #newApp.appleId = '5D4F84A86DFA5D1F6A8DF4'
+    #newApp.name = 'IGN Core'
+    #newApp.save
   end
 
   def show

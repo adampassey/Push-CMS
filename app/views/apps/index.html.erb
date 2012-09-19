@@ -1,1 +1,23 @@
-Apps#index
+
+<div class="container">
+  <% if @apps %>
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th>Apple ID</th>
+          <th>Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @apps.each do |app| %>
+          <tr>
+            <td width="40%"><%= app.appleId %></td>
+            <td><%= app.name %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    No Apps!
+  <% end %>
+</div>
