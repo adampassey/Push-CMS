@@ -1,0 +1,14 @@
+defaults: &defaults
+  v1_pushapi_url: "http://localhost:8080/pushapi/"
+
+test:
+  <<: *defaults
+
+development:
+  <<: *defaults
+
+staging:
+  <<: *defaults
+
+production:
+  <<: *defaults
