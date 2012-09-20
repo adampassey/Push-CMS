@@ -2,15 +2,16 @@ class Notification
   
   include PushapiHelper
 
-  attr_accessor :title, :description, :URL, :orinoco, :myignId, :appId
+  attr_accessor :title, :description, :URL, :orinoco, :myignId, :deviceToken, :appId
 
   def initialize(app, options = {})
     @appId        = app.appId
     @title        = options[:title]       if options[:title]
     @description  = options[:description] if options[:description]
     @URL          = options[:URL]         if options[:URL]
-    @orinoco      = options[:orinoco] ? options[:orinoco] : 0
-    @myignId      = options[:myignId] ? options[:myignId] : 0
+    @deviceToken  = options[:deviceToken] if options[:deviceToken]
+    @orinoco      = options[:orinoco]     if options[:orinoco]
+    @myignId      = options[:myignId]     if options[:myignId]
   end
 
   # Will only send a notification if

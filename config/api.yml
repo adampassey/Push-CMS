@@ -1,5 +1,6 @@
 defaults: &defaults
   v1_pushapi_url: "http://localhost:8124/pushapi/"
+  #v1_pushapi_url: "http://ec2-204-236-146-58.us-west-1.compute.amazonaws.com/pushapi/"
 
 test:
   <<: *defaults
