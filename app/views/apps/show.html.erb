@@ -5,18 +5,18 @@
   </ul>
 </div>
 <div class="container">
-  <form class="form-horizontal">
+  <%= form_tag("#{@app.appleId}/notifications", :controller => "notifications", :action => "new", :method => "post", :class => "form-horizontal") do %>
     <legend>Send a Push Notification</legend>
     <div class="control-group">
       <label class="control-label">Title</label>
       <div class="controls">
-        <input type="text" placeholder="Small titles only please...">
+        <%= text_field_tag "title", nil, :placeholder => "Small titles only please..." %>
       </div>
     </div>
     <div class="control-group">
       <label class="control-label">Description</label>
       <div class="controls">
-        <textarea rows="6"></textarea>
+        <%= text_area_tag "description", nil, :rows => 10, :cols => 10 %>
       </div>
     </div>
     <div class="control-group">
@@ -24,5 +24,5 @@
         <button type="submit" class="btn"><i class="icon-share-alt"></i>Send</button>
       </div>
     </div>
-  </form>
+  <% end %>
 </div>
