@@ -2,7 +2,6 @@ class AppsController < ApplicationController
 
   def index 
     @apps = App.get
-    @alert = params[:alert] if params[:alert]
   end
 
   def show

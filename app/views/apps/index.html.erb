@@ -1,8 +1,8 @@
 <div class="container">
-  <% if @alert %>
+  <% flash.each do |k,v| %>
     <div class="alert">
       <button type="button" class="close" data-dismiss="alert">x</button>
-      <strong>Success!</strong> <%= @alert %>
+      <%= v.html_safe %>
     </div>
   <% end %>
   <% if @apps %>
@@ -25,6 +25,11 @@
   <% else %>
     <div class="alert">No apps found.</div>
   <% end %>
+  <div class="pagination pull-right">
+    <ul>
+      <li><a href="?p=1">1</a></li>
+    </ul>
+  </div>
   <div class="btn-group">
     <a href="#createAppModal" class="btn btn-inverse" data-toggle="modal"><i class="icon-plus icon-white"></i> Create App</a>
   </div>

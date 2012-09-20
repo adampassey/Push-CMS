@@ -6,7 +6,8 @@ class NotificationsController < ApplicationController
     notification = Notification.new app, { :title => params[:title], :description => params[:description], :URL => params[:URL] }
     notification.send
 
-    redirect_to :controller => "apps", :action => "index", :alert => "Notification sent."
+    flash[:notice] = "<strong>Success!</strong> Notification sent." # will print html_safe
+    redirect_to :controller => "apps", :action => "index"
   end
 
 end
