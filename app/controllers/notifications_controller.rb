@@ -13,7 +13,7 @@ class NotificationsController < ApplicationController
     options[:deviceToken] = params[:deviceToken]  if params[:deviceToken] and not params[:deviceToken].blank?
 
     notification = Notification.new app, options
-    notification.send #if Rails.env == "production"
+    notification.send if Rails.env == "production"
     Rails.logger.debug "Sending Notification:"
     Rails.logger.debug notification.to_json
 
