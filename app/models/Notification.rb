@@ -11,7 +11,7 @@ class Notification
     @URL          = options[:URL]         if options[:URL]
     @deviceToken  = options[:deviceToken] if options[:deviceToken]
     @orinoco      = options[:orinoco]     if options[:orinoco]
-    @myignId      = options[:myignId]     if options[:myignId]
+    @myignid      = options[:myignid]     if options[:myignid]
   end
 
   # Will only send a notification if

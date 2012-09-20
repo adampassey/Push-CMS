@@ -9,7 +9,7 @@ class NotificationsController < ApplicationController
     options[:description] = params[:description]  if params[:description]
     options[:URL]         = params[:URL]          if params[:URL]         and not params[:URL].blank?
     options[:orinoco]     = params[:orinoco]      if params[:orinoco]     and not params[:orinoco].blank?
-    options[:myignId]     = params[:myignId]      if params[:myignId]     and not params[:myignId].blank?
+    options[:myignid]     = params[:myignid]      if params[:myignid]     and not params[:myignid].blank?
     options[:deviceToken] = params[:deviceToken]  if params[:deviceToken] and not params[:deviceToken].blank?
 
     notification = Notification.new app, options
