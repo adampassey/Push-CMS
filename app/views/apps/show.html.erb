@@ -1,10 +1,28 @@
 <div class="container">
-  <form>
+  <ul class="breadcrumb">
+    <li><a href="/apps">Apps</a> <span class="divider">/</span></li>
+    <li class="active"><%= @app.name %></li>
+  </ul>
+</div>
+<div class="container">
+  <form class="form-horizontal">
     <legend>Send a Push Notification</legend>
-    <label>Title</label>
-    <input type="text" placeholder="The title...">
-    <span class="help-block">The title of the notification.</span>
-    <textarea rows="6"></textarea>
-    <button type="submit" class="btn"><i class="icon-share-alt"></i>Send</button>
+    <div class="control-group">
+      <label class="control-label">Title</label>
+      <div class="controls">
+        <input type="text" placeholder="Small titles only please...">
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label">Description</label>
+      <div class="controls">
+        <textarea rows="6"></textarea>
+      </div>
+    </div>
+    <div class="control-group">
+      <div class="controls">
+        <button type="submit" class="btn"><i class="icon-share-alt"></i>Send</button>
+      </div>
+    </div>
   </form>
 </div>
