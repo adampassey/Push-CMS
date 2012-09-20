@@ -15,7 +15,9 @@ class AppsController < ApplicationController
     app.appId = params[:appId]
     app.name = params[:name]
     app.save
-    redirect_to :controller => "apps", :action => "index", :alert => "App created."
+
+    flash[:notice] = "<strong>Success!</strong> App created."
+    redirect_to :controller => "apps", :action => "index"
   end
 
 end
