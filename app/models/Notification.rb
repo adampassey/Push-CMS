@@ -9,8 +9,8 @@ class Notification
     @title        = options[:title]       if options[:title]
     @description  = options[:description] if options[:description]
     @URL          = options[:URL]         if options[:URL]
-    @orinoco      = 0   # this is not coming from orinoco, but needs to send as part of payload
-    @myignId      = 0   # same with myignId
+    @orinoco      = options[:orinoco] ? options[:orinoco] : 0
+    @myignId      = options[:myignId] ? options[:myignId] : 0
   end
 
   # Will only send a notification if

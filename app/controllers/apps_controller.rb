@@ -10,7 +10,6 @@ class AppsController < ApplicationController
 
   # post
   def create
-    Rails.logger.debug "Apps#create"
     app = App.new
     app.appId = params[:appId]
     app.name = params[:name]
