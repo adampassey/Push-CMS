@@ -4,7 +4,7 @@ class NotificationsController < ApplicationController
   def create
     app = App.get_by_id params[:app_id]
     notification = Notification.new app, { :title => params[:title], :description => params[:description], :URL => params[:URL] }
-    notification.send
+    notification.send if Rails.env == "production"
 
     flash[:notice] = "<strong>Success!</strong> Notification sent." # will print html_safe
     redirect_to :controller => "apps", :action => "index"

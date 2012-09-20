@@ -16,7 +16,7 @@ class Notification
   # Will only send a notification if
   # we're in production.
   def send
-    PushapiHelper.api_post("apps/#{self.appId}/notifications", ActiveSupport::JSON.encode(self)) if Rails.env == "production"
+    PushapiHelper.api_post("apps/#{self.appId}/notifications", ActiveSupport::JSON.encode(self))
   end
 
   class << self
