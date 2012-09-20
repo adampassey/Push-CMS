@@ -12,3 +12,4 @@ staging:
 
 production:
   <<: *defaults
+  v1_pushapi_url: "http://ec2-204-236-146-58.us-west-1.compute.amazonaws.com/pushapi/"
