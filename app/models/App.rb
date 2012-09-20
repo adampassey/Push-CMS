@@ -3,8 +3,12 @@ class App
   include PushapiHelper
   include AppHelper
 
-  attr_accessor :_id, :appleId, :name
+  attr_accessor :_id, :appId, :name
   ENDPOINT = "apps"
+
+  def save
+    PushapiHelper.api_post(ENDPOINT, ActiveSupport::JSON.encode(self))
+  end
 
   class << self
 

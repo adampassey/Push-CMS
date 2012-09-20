@@ -5,7 +5,7 @@
   </ul>
 </div>
 <div class="container">
-  <%= form_tag("#{@app.appleId}/notifications", :controller => "notifications", :action => "new", :method => "post", :class => "form-horizontal") do %>
+  <%= form_tag("#{@app.appId}/notifications", :controller => "notifications", :action => "new", :method => "post", :class => "form-horizontal") do %>
     <legend>Send a Push Notification</legend>
     <div class="control-group">
       <label class="control-label">Title</label>

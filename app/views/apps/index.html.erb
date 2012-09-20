@@ -1,7 +1,7 @@
 <div class="container">
   <% if @alert %>
     <div class="alert">
-      <!-- <button type="button" class="close" data-dismiss="alert">x</button> -->
+      <button type="button" class="close" data-dismiss="alert">x</button>
       <strong>Success!</strong> <%= @alert %>
     </div>
   <% end %>
@@ -16,13 +16,44 @@
       <tbody>
         <% @apps.each do |app| %>
           <tr>
-            <td width="40%"><%= link_to app.appleId, :controller => "apps", :action => "show", :id => app.appleId %></td>
-            <td><%= link_to app.name, :controller => "apps", :action => "show", :id => app.appleId %></td>
+            <td width="40%"><%= link_to app.appId, :controller => "apps", :action => "show", :id => app.appId %></td>
+            <td><%= link_to app.name, :controller => "apps", :action => "show", :id => app.appId %></td>
           </tr>
         <% end %>
       </tbody>
     </table>
   <% else %>
-    No Apps!
+    <div class="alert">No apps found.</div>
+  <% end %>
+  <div class="btn-group">
+    <a href="#createAppModal" class="btn btn-inverse" data-toggle="modal"><i class="icon-plus icon-white"></i> Create App</a>
+  </div>
+</div>
+
+<!-- Create application modal -->
+<div class="modal hide fade" id="createAppModal">
+  <%= form_tag("apps", :controller => "apps", :action => "new", :method => "post", :class => "form-horizontal", :style => "margin:0;") do %>
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      <h3>Create App</h3>
+    </div>
+    <div class="modal-body">
+      <div class="control-group">
+        <label class="control-label">Apple ID</label>
+        <div class="controls">
+          <%= text_field_tag "appId" %>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label">Name</label>
+        <div class="controls">
+          <%= text_field_tag "name" %>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#createAppModal" class="btn" data-dismiss="modal">Close</a>
+      <input type="submit" class="btn btn-primary" value="Create App"/>
+    </div>
   <% end %>
 </div>

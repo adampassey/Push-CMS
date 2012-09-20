@@ -4,7 +4,7 @@ module AppHelper
 
     def app_from_hash(h)
       tmpApp = App.new
-      tmpApp.appleId = h['appId']
+      tmpApp.appId = h['appId']
       tmpApp.name = h['name']
       tmpApp
     end

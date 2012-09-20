@@ -26,15 +26,12 @@ module PushapiHelper
     end
   
     def api_post(endpoint, body)
-      Rails.logger.debug "Post body is: #{body}"
       conn = Faraday.new(:url => V1_PUSHAPI_URL) do |faraday|
         faraday.headers['Content-Type'] = 'application/json'
         faraday.response :logger                  # log requests to STDOUT
         faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
       end
       response = conn.post endpoint, body
-      Rails.logger.debug "Response received, here it is:"
-      Rails.logger.debug response.to_yaml
       ActiveSupport::JSON.decode response.body
     end
   

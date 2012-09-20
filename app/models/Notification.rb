@@ -5,7 +5,7 @@ class Notification
   attr_accessor :title, :description, :URL, :orinoco, :myignId, :appId
 
   def initialize(app, options = {})
-    @appId        = app.appleId
+    @appId        = app.appId
     @title        = options[:title]       if options[:title]
     @description  = options[:description] if options[:description]
     @URL          = options[:URL]         if options[:URL]
