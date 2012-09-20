@@ -11,8 +11,8 @@
       <tbody>
         <% @apps.each do |app| %>
           <tr>
-            <td width="40%"><%= app.appleId %></td>
-            <td><%= app.name %></td>
+            <td width="40%"><%= link_to app.appleId, :controller => "apps", :action => "show", :id => app.appleId %></td>
+            <td><%= link_to app.name, :controller => "apps", :action => "show", :id => app.appleId %></td>
           </tr>
         <% end %>
       </tbody>
