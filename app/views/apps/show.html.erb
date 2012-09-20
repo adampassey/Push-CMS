@@ -10,13 +10,13 @@
     <ul class="nav nav-tabs notification-tabs">
       <li class="active"><a href="#" data-toggle="broadcast">Broadcast</a></li>
       <li><a href="#" data-toggle="urlBroadcast">URL Broadcast</a></li>
-      <li><a href="#" data-toggle="myIGN">MyIGN</a></li>
-      <li><a href="#" data-toggle="deviceToken">Device Token</a></li>
+      <li><a href="#" data-toggle="myIGN">MyIGN <span class="badge badge-info">Example</span></a></li>
+      <li><a href="#" data-toggle="deviceToken">Device Token <span class="badge badge-info">Example</span></a></li>
     </ul>
     <div class="control-group">
       <label class="control-label">Title</label>
       <div class="controls">
-        <%= text_field_tag "title", nil, :placeholder => "Small titles only please...", :autocomplete => "off", :class => "span6", :required => true %>
+        <%= text_field_tag "title", nil, :placeholder => "Small titles only please...", :autocomplete => "off", :class => "span6", :required => true, :maxlength => 80 %>
       </div>
     </div>
     <div class="control-group hide urlBroadcast optional-notify">
