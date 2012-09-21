@@ -4,6 +4,8 @@ PushCmsRails::Application.routes.draw do
     resources :notifications
   end
 
+  resources :reports
+
   root :to => 'apps#index'
 
   # The priority is based upon order of creation:

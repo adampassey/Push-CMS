@@ -14,8 +14,8 @@
       <a href="/" class="brand">Push CMS</a>
       <div class="nav-collapse collapse">
         <ul class="nav">
-          <li <%= 'class="active"'.html_safe if controller.controller_name == "apps" %>><a href="/">Apps</a></li>
-          <li <%= 'class="active"'.html_safe if controller.controller_name == "reports" %>><a href="#">Reports <span class="badge badge-important">Coming Soon</span></a></li>
+          <li <%= 'class="active"'.html_safe if controller.controller_name == "apps" %>><a href="/apps">Apps</a></li>
+          <li <%= 'class="active"'.html_safe if controller.controller_name == "reports" %>><a href="#" class="navbar-reports" rel="tooltip" title="Currently unavailable." data-placement="bottom">Reports <span class="badge badge-important">Coming Soon</span></a></li>
         </ul>
       </div>
     </div>
