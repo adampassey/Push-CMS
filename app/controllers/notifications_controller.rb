@@ -11,6 +11,9 @@ class NotificationsController < ApplicationController
     options[:orinoco]     = params[:orinoco]      if params[:orinoco]     and not params[:orinoco].blank?
     options[:myignid]     = params[:myignid]      if params[:myignid]     and not params[:myignid].blank?
     options[:deviceToken] = params[:deviceToken]  if params[:deviceToken] and not params[:deviceToken].blank?
+    options[:eventType]   = params[:eventType]    if params[:eventType]   and not params[:eventType].blank?
+    options[:payload]     = params[:payload]      if params[:payload]     and not params[:payload].blank?
+    options[:noAlert]     = 1                     unless params[:alert]   and params[:alert] == "yes"
 
     notification = Notification.new app, options
     notification.send if Rails.env == "production"
